@@ -75,3 +75,13 @@ Some formats appear to be broken by macOS Catalina. The SystemUIServer silently 
 
 **trackpad_3finger_drag** - Drag items using 3 fingers.
 
+
+## License
+
+MIT, see LICENSE file.
+
+
+## Author
+
+Created in 2020 by Stephen Ulmer.
+
