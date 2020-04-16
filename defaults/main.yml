@@ -1,0 +1,23 @@
+---
+dock_mru_spaces: null
+dock_orientation: null          # "left", "bottom", or "right"
+dock_autohide: null
+dock_autohide_delay: null
+dock_active_only: null
+dock_single_app: null
+dock_mineffect: null            # "genie", "suck", or "scale"
+dock_magnify: null
+
+menu_clock_format: null
+menu_clock_analog: null
+menu_clock_flash: null
+
+ds_ignore_network_shares: null
+ds_ignore_media: null
+
+trackpad_zoom: null
+trackpad_3finger_drag: null
+
+mail_shortcuts: []
+
+global_shortcuts: []

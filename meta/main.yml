@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Stephen Ulmer
+  description: Configure Per-User Defaults for macOS
+  company: Alleve Consulting, Inc.
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: MacOSX
+      versions:
+        - all
+        - any
+
+  galaxy_tags:
+    - development
+    - system

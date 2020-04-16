@@ -1,0 +1,32 @@
+---
+- name: Enable screen zoom with ctrl and scroll gesture
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: closeViewScrollWheelToggle
+    type: bool
+    value: "{{ trackpad_zoom }}"
+  when: trackpad_zoom is not none
+
+- name: Enable screen zoom with ctrl and scroll gesture (part deux)
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: HIDScrollZoomModifierMask
+    type: int
+    value: 262144
+  when: trackpad_zoom is not none
+
+- name: Enable three finger drag gesture (standard driver)
+  osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: TrackpadThreeFingerDrag
+    type: bool
+    value: "{{ trackpad_3finger_drag }}"
+  when: trackpad_3finger_drag is not none
+
+- name: Enable three finger drag gesture (bluetooth driver)
+  osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: TrackpadThreeFingerDrag
+    type: bool
+    value: "{{ trackpad_3finger_drag }}"
+  when: trackpad_3finger_drag is not none

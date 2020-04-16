@@ -1,0 +1,7 @@
+---
+- name: restart SystemUIServer
+  command: killall SystemUIServer
+  listen: restart menubar
+
+- name: restart Dock
+  command: killall Dock

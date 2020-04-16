@@ -1,0 +1,63 @@
+---
+- name: Which screen edge for the Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: "{{ dock_orientation }}"
+  when: dock_orientation is not none
+  notify: restart Dock
+
+- name: Automatically Hide and Show the Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: "{{ dock_autohide }}"
+  when: dock_autohide is not none
+  notify: restart Dock
+
+- name: Remove Dock Autohide Delay
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: "{{ dock_autohide_delay }}"
+  when: dock_autohide_delay is not none
+  notify: restart Dock
+
+- name: Only Show Running Apps in Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: static-only
+    type: bool
+    value: "{{ dock_active_only }}"
+  when: dock_active_only is not none
+  notify: restart Dock
+
+- name: Single App Mode
+  osx_defaults:
+    domain: com.apple.dock
+    key: single-app
+    type: bool
+    value: "{{ dock_single_app }}"
+  when: dock_single_app is not none
+  notify: restart Dock
+
+- name: Dock Minimization Effect
+  osx_defaults:
+    domain: com.apple.dock
+    key: mineffect
+    type: bool
+    value: "{{ dock_mineffect }}"
+  when: dock_mineffect is not none
+  notify: restart Dock
+
+- name: Dock Magnification Effect
+  osx_defaults:
+    domain: com.apple.dock
+    key: magnification
+    type: bool
+    value: "{{ dock_magnify }}"
+  when: dock_magnify is not none
+  notify: restart Dock

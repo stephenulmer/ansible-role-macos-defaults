@@ -1,0 +1,7 @@
+---
+- import_tasks: dock.yml
+- import_tasks: menu.yml
+- import_tasks: mail.yml
+- import_tasks: keyboard.yml
+- import_tasks: finder.yml
+- import_tasks: trackpad.yml

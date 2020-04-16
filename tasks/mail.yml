@@ -1,0 +1,13 @@
+---
+- name: Add keyboard shortcuts to Mail.app
+  block:
+    - name: Extract NSUserKeyEquivalents from GlobalPreferences
+      command: defaults read com.apple.Mail NSUserKeyEquivalents
+      register: nsuserkeyequivalents_current
+      ignore_errors: True
+      changed_when: False
+
+    - name: 'Add or update Mail.app keyboard shortcuts'
+      command: defaults write com.apple.Mail NSUserKeyEquivalents  -dict-add '{{ item.key }}' "{{ item.value }}"
+      when: item.key ~ '" = "' ~ item.value not in nsuserkeyequivalents_current.stdout
+      loop: "{{ mail_shortcuts }}"

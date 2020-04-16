@@ -1,0 +1,27 @@
+---
+- name: Set the format of the menu bar clock
+  osx_defaults:
+    domain: com.apple.menuextra.clock
+    key: DateFormat
+    type: string
+    value: "{{ menu_clock_format }}"
+  when: menu_clock_format is not none
+  notify: restart menubar
+
+- name: Set the menu bar clock to analog?
+  osx_defaults:
+    domain: com.apple.menuextra.clock
+    key: IsAnalog
+    type: bool
+    value: "{{ menu_clock_analog }}"
+  when: menu_clock_analog is not none
+  notify: restart menubar
+
+- name: Flash date separators on menu bar clock?
+  osx_defaults:
+    domain: com.apple.menuextra.clock
+    key: FlashDateSeparators
+    type: bool
+    value: "{{ menu_clock_flash }}"
+  when: menu_clock_flash is not none
+  notify: restart menubar

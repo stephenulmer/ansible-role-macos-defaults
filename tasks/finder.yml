@@ -1,0 +1,18 @@
+---
+- name: Don't write .DS_store on network shares
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: "{{ ds_ignore_network_shares }}"
+  when: ds_ignore_network_shares is not none
+  notify: restart finder
+
+- name: Don't write .DS_store on USB media
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteUSBStores
+    type: bool
+    value: "{{ ds_ignore_media }}"
+  when: ds_ignore_media is not none
+  notify: restart finder
