@@ -17,6 +17,7 @@ ds_ignore_media: null
 
 trackpad_zoom: null
 trackpad_3finger_drag: null
+trackpad_tap_to_click: null
 
 mail_shortcuts: []
 
