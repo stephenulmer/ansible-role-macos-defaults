@@ -8,6 +8,6 @@
       changed_when: False
 
     - name: 'Add or update Mail.app keyboard shortcuts'
-      command: defaults write com.apple.Mail NSUserKeyEquivalents  -dict-add '{{ item.key }}' "{{ item.value }}"
-      when: item.key ~ '" = "' ~ item.value not in nsuserkeyequivalents_current.stdout
+      command: defaults write com.apple.Mail NSUserKeyEquivalents  -dict-add '{{ shortcut.key }}' "{{ shortcut.value }}"
+      when: shortcut.key ~ '" = "' ~ shortcut.value not in nsuserkeyequivalents_current.stdout
       loop: "{{ mail_shortcuts }}"

@@ -8,6 +8,8 @@
       changed_when: False
 
     - name: 'Add or update global keyboard shortcuts'
-      command: defaults write -globalDomain NSUserKeyEquivalents  -dict-add '{{ item.key }}' "{{ item.value }}"
-      when: item.key ~ '" = "' ~ item.value not in nsuserkeyequivalents_current.stdout
+      command: defaults write -globalDomain NSUserKeyEquivalents  -dict-add '{{ shortcut.key }}' "{{ shortcut.value }}"
+      when: shortcut.key ~ '" = "' ~ shortcut.value not in nsuserkeyequivalents_current.stdout
       loop: "{{ global_shortcuts }}"
+      loop_control:
+        loop_var: shortcut
