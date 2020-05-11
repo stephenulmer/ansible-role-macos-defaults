@@ -35,15 +35,15 @@
   osx_defaults:
     domain: com.apple.AppleMultitouchTrackpad
     key: Clicking
-    type: bool
-    value: "{{ trackpad_tap_to_click }}"
+    type: int
+    value: "{{ trackpad_tap_to_click|bool|ternary('1', '0') }}"
   when: trackpad_tap_to_click is not none
 
 - name: Enable tap to click (bluetooth driver)
   osx_defaults:
     domain: com.apple.AppleMultitouchTrackpad
     key: Clicking
-    type: bool
-    value: "{{ trackpad_tap_to_click }}"
+    type: int
+    value: "{{ trackpad_tap_to_click|bool|ternary('1', '0') }}"
   when: trackpad_tap_to_click is not none
 
