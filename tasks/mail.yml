@@ -11,3 +11,5 @@
       command: defaults write com.apple.Mail NSUserKeyEquivalents  -dict-add '{{ shortcut.key }}' "{{ shortcut.value }}"
       when: shortcut.key ~ '" = "' ~ shortcut.value not in nsuserkeyequivalents_current.stdout
       loop: "{{ mail_shortcuts }}"
+      loop_control:
+        loop_var: shortcut
