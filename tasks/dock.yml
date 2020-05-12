@@ -1,4 +1,13 @@
 ---
+- name: Rearrange Desktop Spaces Based on Use
+  osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: "{{ dock_mru_spaces }}"
+  when: dock_mru_spaces is not none
+  notify: restart Dock
+
 - name: Which screen edge for the Dock
   osx_defaults:
     domain: com.apple.dock
