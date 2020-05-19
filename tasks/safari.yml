@@ -35,6 +35,6 @@
   osx_defaults:
     domain: com.apple.Safari
     key: HomePage
-    type: bool
+    type: string
     value: "{{ safari_homepage }}"
   when: safari_homepage is not none
