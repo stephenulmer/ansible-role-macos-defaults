@@ -15,6 +15,12 @@ menu_clock_flash: null
 ds_ignore_network_shares: null
 ds_ignore_media: null
 
+safari_develop_menu: null
+safari_show_favorites_bar: null
+safari_tabs_cmdnum_swiches: null
+safari_tabs_new_in_front: null
+safari_homepage: null
+
 trackpad_zoom: null
 trackpad_3finger_drag: null
 trackpad_tap_to_click: null

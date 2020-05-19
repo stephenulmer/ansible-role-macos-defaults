@@ -1,0 +1,40 @@
+---
+- name: Turn on Develop Menu for Safari (allows viewing page source)
+  osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeDevelopMenu
+    type: bool
+    value: "{{ safari_develop_menu }}"
+  when: safari_develop_menu is not none
+
+- name: Show Favorites Bar
+  osx_defaults:
+    domain: com.apple.Safari
+    key: ShowFavoritesBar-v2
+    type: bool
+    value: "{{ safari_show_favorites_bar }}"
+  when: safari_show_favorites_bar is not none
+
+- name: Use CMD-[1..9] to Switch Tabs
+  osx_defaults:
+    domain: com.apple.Safari
+    key: Command1Through9SwitchesTabs
+    type: bool
+    value: "{{ safari_tabs_cmdnum_swiches }}"
+  when: safari_tabs_cmdnum_swiches is not none
+
+- name: Open New Tabs in Front
+  osx_defaults:
+    domain: com.apple.Safari
+    key: OpenNewTabsInFront
+    type: bool
+    value: "{{ safari_tabs_new_in_front }}"
+  when: safari_tabs_new_in_front is not none
+
+- name: Set Home Page
+  osx_defaults:
+    domain: com.apple.Safari
+    key: HomePage
+    type: bool
+    value: "{{ safari_homepage }}"
+  when: safari_homepage is not none
