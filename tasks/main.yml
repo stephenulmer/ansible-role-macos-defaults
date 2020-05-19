@@ -4,4 +4,5 @@
 - import_tasks: mail.yml
 - import_tasks: keyboard.yml
 - import_tasks: finder.yml
+- import_tasks: safari.yml
 - import_tasks: trackpad.yml
