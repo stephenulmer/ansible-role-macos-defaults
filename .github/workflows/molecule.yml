@@ -1,0 +1,33 @@
+## Run molecule tests on this Ansible role.
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  test_with_molecule:
+    # The type of runner that the job will run on
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.3
+
+    - name: Install testing software
+      run: pip install molecule yamllint ansible-lint
+
+    - name: Download role dependencies
+      run: ansible-galaxy install -r requirements.yml
+
+    - name: Run molecule test suite
+      run: molecule test -s ci
