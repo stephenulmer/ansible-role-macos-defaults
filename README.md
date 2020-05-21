@@ -71,15 +71,15 @@ Some formats appear to be broken by macOS Catalina. The SystemUIServer silently 
 
 ### Safari
 
-***safari_develop_menu*** - Turn on the develop(er's) menu. Allows showing page source, etc.
+**safari_develop_menu** - Turn on the develop(er's) menu. Allows showing page source, etc.
 
-***safari_show_favorites_bar*** - Show favorite bookmarks just above the tabs.
+**safari_show_favorites_bar** - Show favorite bookmarks just above the tabs.
 
-***safari_tabs_cmdnum_swiches*** - Use Command+1 through Command+9 to switch tabs; Otherwise they activate favorites.
+**safari_tabs_cmdnum_swiches** - Use Command+1 through Command+9 to switch tabs; Otherwise they activate favorites.
 
-***safari_tabs_new_in_front*** - Immediately switch to a new tab when it opens.
+**safari_tabs_new_in_front** - Immediately switch to a new tab when it opens.
 
-***safari_homepage*** - Set the page to open in a new browser window.
+**safari_homepage** - Set the page to open in a new browser window.
 
 
 ### Trackpad
