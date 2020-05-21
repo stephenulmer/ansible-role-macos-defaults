@@ -88,6 +88,18 @@ Some formats appear to be broken by macOS Catalina. The SystemUIServer silently 
 
 **trackpad_3finger_drag** - Drag items using 3 fingers.
 
+**trackpad_tap_to_click** - Tapping on the trackpad will activate a click, in addition to actually depressing it.
+
+
+### Mail
+
+**mail_shortcuts** - List of keyboard shortcuts to add for the built-in email program.
+
+
+### GLobal
+
+**gloabl_shortcuts** - List of keyboard shortcuts to add for the entire system.
+
 
 ## License
 
