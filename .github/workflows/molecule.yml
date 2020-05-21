@@ -27,7 +27,13 @@ jobs:
       run: pip install molecule yamllint ansible-lint
 
     - name: Download role dependencies
-      run: ansible-galaxy install -r requirements.yml
+      run: |
+        if [ -f requirements.yml ] ; then
+          ansible-galaxy install -r requirements.yml
+        fi
 
     - name: Run molecule test suite
-      run: molecule test -s ci
+      run: |
+        if [ -d molecule/ci ] ; then
+          molecule test -s ci
+        fi
