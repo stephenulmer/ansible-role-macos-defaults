@@ -97,7 +97,7 @@ Some formats appear to be broken by macOS Catalina. The SystemUIServer silently 
 **mail_shortcuts** - List of keyboard shortcuts to add for the built-in email program.
 
 
-### GLobal
+### Global
 
 **gloabl_shortcuts** - List of keyboard shortcuts to add for the entire system.
 
