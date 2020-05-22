@@ -2,7 +2,10 @@
 
 ![molecule tests](https://github.com/stephenulmer/ansible-role-macos-defaults/workflows/molecule%20tests/badge.svg)
 
-This is an Ansible role targeted at setting up macOS preferences in a repeatable, non-interactive way.
+This is an Ansible role to set macOS preferences in a repeatable, non-interactive way.
+
+Only preferences for software that is included with macOS by default are targeted. Everything else gets
+a role of its own.
 
 ## Usage
 
