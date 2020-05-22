@@ -1,6 +1,6 @@
 # Ansible Role to Configure macOS Defaults
 
-![CI](https://github.com/stephenulmer/ansible-role-macos-defaults/workflows/CI/badge.svg)
+![CI](https://github.com/stephenulmer/ansible-role-macos-defaults/workflows/molecule%20tests/badge.svg)
 
 This is an Ansible role targeted at setting up macOS preferences in a repeatable, non-interactive way.
 
