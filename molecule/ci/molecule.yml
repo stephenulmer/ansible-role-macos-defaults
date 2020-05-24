@@ -1,19 +1,29 @@
 ---
 dependency:
   name: galaxy
+
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
+
 driver:
   name: delegated
   options:
     managed: False
     ansible_connection_options:
       ansible_connection: local
+
 platforms:
   - name: instance
+
 provisioner:
   name: ansible
   ansible_args:
     - --inventory=cigroups
   playbooks:
     converge: ../default/converge.yml
+
 verifier:
   name: ansible
