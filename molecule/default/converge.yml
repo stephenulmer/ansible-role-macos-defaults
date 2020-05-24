@@ -1,5 +1,20 @@
 ---
-- name: Converge
-  hosts: all
+- name: Converge with default role variables
+  hosts: novars
+  roles:
+    - role: ansible-role-macos-defaults
+
+- name: Converge with custom role variables
+  hosts: usevars
+  vars:
+    dock_orientation: "left"
+    dock_autohide: "true"
+    dock_autohide_delay: 0
+    mail_shortcuts:
+      - { key: '\033Mail\033Services\033OmniFocus 3: Send to Inbox', value: '@^,' }
+      - { key: '\033Message\033Move to\033UlmerNET\033receipts', value: '^r' }
+      - { key: 'Insert Bulleted List', value: '@~\U005B' }
+    global_shortcuts:
+      - { key: 'Save as PDF', value: '@p' }
   roles:
     - role: ansible-role-macos-defaults
