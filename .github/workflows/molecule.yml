@@ -37,7 +37,7 @@ jobs:
     - name: Write out inventory file for testing mode
       run: |
         echo "[${{ matrix.type }}]" > molecule/ci/cigroups
-        echo "localhost" >> molecule/ci/cigroups
+        echo $(hostname) >> molecule/ci/cigroups
 
     - name: Run molecule test suite
       run: |
