@@ -46,4 +46,3 @@
     type: int
     value: "{{ trackpad_tap_to_click|bool|ternary('1', '0') }}"
   when: trackpad_tap_to_click is not none
-
