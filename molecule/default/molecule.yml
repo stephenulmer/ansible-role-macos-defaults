@@ -4,8 +4,6 @@ dependency:
 
 driver:
   name: vagrant
-  provider:
-    name: vmware_desktop
 
 lint: |
   set -e
@@ -14,30 +12,18 @@ lint: |
   flake8
 
 platforms:
-  - name: macos-mojave
+  - name: macos-novars
+    groups:
+      - novars
+    box: macinbox
+
+  - name: macos-usevars
     groups:
       - usevars
-    box: msl/macos_mojave_10.14
-    memory: 2048
-    cpus: 2
-    config_options:
-      synced_folder: False
+    box: macinbox
 
 provisioner:
   name: ansible
-  inventory:
-    group_vars:
-      usevars:
-        dock_orientation: "left"
-        dock_autohide: "true"
-        dock_autohide_delay: 0
-        mail_shortcuts:
-          - { key: '\033Mail\033Services\033OmniFocus 3: Send to Inbox', value: '@^,' }
-          - { key: '\033Message\033Move to\033UlmerNET\033receipts', value: '^r' }
-          - { key: 'Insert Bulleted List', value: '@~\U005B' }
-        global_shortcuts:
-          - { key: 'Save as PDF', value: '@p' }
-
   log: True
 
 verifier:

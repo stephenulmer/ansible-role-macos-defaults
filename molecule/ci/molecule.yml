@@ -11,5 +11,9 @@ platforms:
   - name: instance
 provisioner:
   name: ansible
+  ansible_args:
+    - --inventory=cigroups
+  playbooks:
+    converge: ../default/converge.yml
 verifier:
   name: ansible
