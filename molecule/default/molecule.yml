@@ -12,10 +12,10 @@ lint: |
   flake8
 
 platforms:
-  - name: macos-mojave
+  - name: macos-usevars
     groups:
       - usevars
-    box: msl/macos_mojave_10.14
+    box: macinbox
 
 provisioner:
   name: ansible
