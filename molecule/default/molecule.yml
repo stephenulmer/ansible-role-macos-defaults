@@ -4,8 +4,6 @@ dependency:
 
 driver:
   name: vagrant
-  provider:
-    name: vmware_desktop
 
 lint: |
   set -e
@@ -18,10 +16,6 @@ platforms:
     groups:
       - usevars
     box: msl/macos_mojave_10.14
-    memory: 2048
-    cpus: 2
-    config_options:
-      synced_folder: False
 
 provisioner:
   name: ansible
